@@ -1,0 +1,438 @@
+[sergeev.rv@localhost ~]$ git config --global user.name "sergeev.rv"
+[sergeev.rv@localhost ~]$ git config --global user.email "rody.sergeev121@gmail.com"
+[sergeev.rv@localhost ~]$ cs
+bash: cs: команда не найдена
+[sergeev.rv@localhost ~]$ ls
+ default.png   Документация   Загрузки      Музыка         'Рабочий стол'
+ Видео         Документы      Изображения   Общедоступные   Шаблоны
+[sergeev.rv@localhost ~]$ pwd
+/home/NET.SCH2.RU/sergeev.rv
+[sergeev.rv@localhost ~]$ ls
+ default.png   Видео          Документы   Изображения   Общедоступные   Шаблоны
+ work          Документация   Загрузки    Музыка       'Рабочий стол'
+[sergeev.rv@localhost ~]$ cd work
+[sergeev.rv@localhost work]$ pwd
+/home/NET.SCH2.RU/sergeev.rv/work
+[sergeev.rv@localhost work]$ mkdir hello
+[sergeev.rv@localhost work]$ cd hello
+[sergeev.rv@localhost hello]$ touch hello.html
+[sergeev.rv@localhost hello]$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/NET.SCH2.RU/sergeev.rv/work/hello/.git/
+[sergeev.rv@localhost hello]$ git add hello,html
+fatal: pathspec 'hello,html' did not match any files
+[sergeev.rv@localhost hello]$ git commit -m "First Commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+[sergeev.rv@localhost hello]$ git add hello.html
+[sergeev.rv@localhost hello]$ git commit -m "First Commit"
+[master (root-commit) 7917c6f] First Commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello.html
+[sergeev.rv@localhost hello]$ git commit
+On branch master
+nothing to commit, working tree clean
+[sergeev.rv@localhost hello]$ touch main.cpp
+[sergeev.rv@localhost hello]$ nano main.cpp
+[sergeev.rv@localhost hello]$ nano main.cpp
+[sergeev.rv@localhost hello]$ nano hello.html
+[sergeev.rv@localhost hello]$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        main.cpp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[sergeev.rv@localhost hello]$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[sergeev.rv@localhost hello]$ git add hello.html
+[sergeev.rv@localhost hello]$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.html
+
+[sergeev.rv@localhost hello]$ git commit
+[master ac701a7] Added h1 tag
+ 1 file changed, 2 insertions(+)
+[sergeev.rv@localhost hello]$ git status
+On branch master
+nothing to commit, working tree clean
+[sergeev.rv@localhost hello]$ nano hello.html
+[sergeev.rv@localhost hello]$ git add hello.html
+[sergeev.rv@localhost hello]$ ls
+hello.html  main.cpp
+[sergeev.rv@localhost hello]$ git add main.cpp
+[sergeev.rv@localhost hello]$ git commit
+hint: Waiting for your editor to close the file...
+[1]+  Остановлен    git commit
+[sergeev.rv@localhost hello]$ git commit
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vim'.
+Please supply the message using either -m or -F option.
+[sergeev.rv@localhost hello]$ git commit
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vim'.
+Please supply the message using either -m or -F option.
+[sergeev.rv@localhost hello]$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.html
+        new file:   main.cpp
+
+[sergeev.rv@localhost hello]$ touch Readme.txt
+[sergeev.rv@localhost hello]$ git teg v1
+git: 'teg' is not a git command. See 'git --help'.
+
+The most similar commands are
+        stage
+        tag
+[sergeev.rv@localhost hello]$ git tag v1
+[sergeev.rv@localhost hello]$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.html
+        new file:   main.cpp
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   main.cpp
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Readme.txt
+
+[sergeev.rv@localhost hello]$ git add main.cpp
+[sergeev.rv@localhost hello]$ git add Readme.txt
+[sergeev.rv@localhost hello]$ get commit
+bash: get: команда не найдена
+[sergeev.rv@localhost hello]$ git commit -m "Fixed main.cpp added Readme"
+[master ac9a0ad] Fixed main.cpp added Readme
+ 3 files changed, 62 insertions(+), 1 deletion(-)
+ create mode 100644 Readme.txt
+ create mode 100644 main.cpp
+[sergeev.rv@localhost hello]$ git status
+On branch master
+nothing to commit, working tree clean
+[sergeev.rv@localhost hello]$ git tag v1
+fatal: tag 'v1' already exists
+[sergeev.rv@localhost hello]$ git tag delete v1
+[sergeev.rv@localhost hello]$ git tag v1
+fatal: tag 'v1' already exists
+[sergeev.rv@localhost hello]$ git log --all
+[sergeev.rv@localhost hello]$ git tag -d v1
+Deleted tag 'v1' (was ac701a7)
+[sergeev.rv@localhost hello]$ git tag -d delete
+Deleted tag 'delete' (was ac701a7)
+[sergeev.rv@localhost hello]$ git tag v1
+[sergeev.rv@localhost hello]$ git log -all
+error: switch `l' expects a numerical value
+[sergeev.rv@localhost hello]$ git tag --all
+error: unknown option `all'
+usage: git tag [-a | -s | -u <key-id>] [-f] [-m <msg> | -F <file>]
+                <tagname> [<head>]
+   or: git tag -d <tagname>...
+   or: git tag -l [-n[<num>]] [--contains <commit>] [--no-contains <commit>] [--points-at <object>]
+                [--format=<format>] [--merged <commit>] [--no-merged <commit>] [<pattern>...]
+   or: git tag -v [--format=<format>] <tagname>...
+
+    -l, --list            list tag names
+    -n[<n>]               print <n> lines of each tag message
+    -d, --delete          delete tags
+    -v, --verify          verify tags
+
+Tag creation options
+    -a, --annotate        annotated tag, needs a message
+    -m, --message <message>
+                          tag message
+    -F, --file <file>     read message from file
+    -e, --edit            force edit of tag message
+    -s, --sign            annotated and GPG-signed tag
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -u, --local-user <key-id>
+                          use another key to sign the tag
+    -f, --force           replace the tag if exists
+    --create-reflog       create a reflog
+
+Tag listing options
+    --column[=<style>]    show tag list in columns
+    --contains <commit>   print only tags that contain the commit
+    --no-contains <commit>
+                          print only tags that don't contain the commit
+    --merged <commit>     print only tags that are merged
+    --no-merged <commit>  print only tags that are not merged
+    --sort <key>          field name to sort on
+    --points-at <object>  print only tags of the object
+    --format <format>     format to use for the output
+    --color[=<when>]      respect format colors
+    -i, --ignore-case     sorting and filtering are case insensitive
+
+[sergeev.rv@localhost hello]$ git log -all
+error: switch `l' expects a numerical value
+[sergeev.rv@localhost hello]$ git log --all
+[sergeev.rv@localhost hello]$ git add Readme.txt
+[sergeev.rv@localhost hello]$ git commit
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vim'.
+Please supply the message using either -m or -F option.
+[sergeev.rv@localhost hello]$ git commit -m "добавил крутую рекламу"
+[master eea097e] добавил крутую рекламу
+ 1 file changed, 2 insertions(+)
+[sergeev.rv@localhost hello]$ git status
+On branch master
+nothing to commit, working tree clean
+[sergeev.rv@localhost hello]$ git checkout v1
+Note: switching to 'v1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at ac9a0ad Fixed main.cpp added Readme
+[sergeev.rv@localhost hello]$ git add Readme.txt
+[sergeev.rv@localhost hello]$ git status
+HEAD detached at v1
+nothing to commit, working tree clean
+[sergeev.rv@localhost hello]$ git revert HEAD
+Removing main.cpp
+Removing Readme.txt
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vim'.
+Please supply the message using either -m or -F option.
+[sergeev.rv@localhost hello]$ ls
+hello.html
+[sergeev.rv@localhost hello]$ git hist
+git: 'hist' is not a git command. See 'git --help'.
+
+The most similar command is
+        bisect
+[sergeev.rv@localhost hello]$ git add main.cpp
+fatal: pathspec 'main.cpp' did not match any files
+[sergeev.rv@localhost hello]$ git add Readme.txt
+fatal: pathspec 'Readme.txt' did not match any files
+[sergeev.rv@localhost hello]$ touch REadme.txt
+[sergeev.rv@localhost hello]$ git add main.cpp
+[sergeev.rv@localhost hello]$ git commit "Added main.cpp"
+error: pathspec 'Added main.cpp' did not match any file(s) known to git
+[sergeev.rv@localhost hello]$ git commit -m "Added main.cpp"
+[detached HEAD 79bb672] Added main.cpp
+ 3 files changed, 2 insertions(+), 7 deletions(-)
+ delete mode 100644 Readme.txt
+[sergeev.rv@localhost hello]$ git status
+HEAD detached from v1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        REadme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+[sergeev.rv@localhost hello]$ git add REadme.txt
+[sergeev.rv@localhost hello]$ git commit -m "Добавлено REadme.txt"
+[detached HEAD 11a9d82] Добавлено REadme.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 REadme.txt
+[sergeev.rv@localhost hello]$ git tag v1
+fatal: tag 'v1' already exists
+[sergeev.rv@localhost hello]$ git tag -d v1
+Deleted tag 'v1' (was ac9a0ad)
+[sergeev.rv@localhost hello]$ git tag v1
+[sergeev.rv@localhost hello]$ git add REadme.txt
+[sergeev.rv@localhost hello]$ git status
+HEAD detached from ac9a0ad
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   REadme.txt
+
+[sergeev.rv@localhost hello]$ git reset HEAD REadme.txt
+Unstaged changes after reset:
+M       REadme.txt
+[sergeev.rv@localhost hello]$ git add main.cpp
+[sergeev.rv@localhost hello]$ git status
+HEAD detached from ac9a0ad
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   main.cpp
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   REadme.txt
+
+[sergeev.rv@localhost hello]$ git commit
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vim'.
+Please supply the message using either -m or -F option.
+[sergeev.rv@localhost hello]$ git commit -m "Изменен main"
+[detached HEAD 310014a] Изменен main
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[sergeev.rv@localhost hello]$ git add REadme.txt
+[sergeev.rv@localhost hello]$ git commit -m "Обновлено реадми"
+[detached HEAD a7accc6] Обновлено реадми
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[sergeev.rv@localhost hello]$ git status
+HEAD detached from ac9a0ad
+nothing to commit, working tree clean
+[sergeev.rv@localhost hello]$ git log --all
+[sergeev.rv@localhost hello]$ touch .gitignore
+[sergeev.rv@localhost hello]$ nano .gitignore
+[sergeev.rv@localhost hello]$ git add .gitignore
+[sergeev.rv@localhost hello]$ git reset HEAD .gitignore
+[sergeev.rv@localhost hello]$ nano .gitignore
+[sergeev.rv@localhost hello]$ git commit -m "игнорю папку с названием чёто и файл с названием KEK.txt"
+HEAD detached from ac9a0ad
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .directory
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+[sergeev.rv@localhost hello]$ git add .gitignore
+[sergeev.rv@localhost hello]$ git commit -m "игнорю папку с названием чёто и файл с названием KEK.txt"
+[detached HEAD 6ae7cc9] игнорю папку с названием чёто и файл с названием KEK.txt
+ 1 file changed, 2 insertions(+)
+ create mode 100644 .gitignore
+[sergeev.rv@localhost hello]$ git add main.cpp
+[sergeev.rv@localhost hello]$ git teset HEAD main.cpp
+git: 'teset' is not a git command. See 'git --help'.
+
+The most similar command is
+        reset
+[sergeev.rv@localhost hello]$ git reset HEAD main.cpp
+Unstaged changes after reset:
+M       main.cpp
+[sergeev.rv@localhost hello]$ git add --no-all
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+[sergeev.rv@localhost hello]$ git add .
+[sergeev.rv@localhost hello]$ git status
+HEAD detached from ac9a0ad
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .directory
+        modified:   main.cpp
+
+[sergeev.rv@localhost hello]$ git commit -m "добавлен вопрос за какую партию Вы голосуете"
+[detached HEAD 9f4da33] добавлен вопрос за какую партию Вы голосуете
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+ create mode 100644 .directory
+[sergeev.rv@localhost hello]$ git log
+[sergeev.rv@localhost hello]$ git revert HEAD
+Removing .directory
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vim'.
+Please supply the message using either -m or -F option.
+[sergeev.rv@localhost hello]$ git log
+[sergeev.rv@localhost hello]$ git log --all
+[sergeev.rv@localhost hello]$ git revert HEAD -m "убрал последнее изменение"
+error: option `mainline' expects a number greater than zero
+[sergeev.rv@localhost hello]$ git revert -m "убрал последнее изменение" HEAD
+error: option `mainline' expects a number greater than zero
+[sergeev.rv@localhost hello]$ git revert -m "delete last" HEAD
+error: option `mainline' expects a number greater than zero
+[sergeev.rv@localhost hello]$ git revert HEAD -m "delete last"
+error: option `mainline' expects a number greater than zero
+[sergeev.rv@localhost hello]$ ^C
+[sergeev.rv@localhost hello]$ git revert HEAD 1 -m "delete last"
+error: option `mainline' expects a number greater than zero
+[sergeev.rv@localhost hello]$ git revert 1 HEAD -m "delete last"
+error: option `mainline' expects a number greater than zero
+[sergeev.rv@localhost hello]$ git revert HEAD -m "delete last"
+error: option `mainline' expects a number greater than zero
+[sergeev.rv@localhost hello]$ git revert HEAD
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+[sergeev.rv@localhost hello]$ git log
+[sergeev.rv@localhost hello]$ git revert HEAD
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+[sergeev.rv@localhost hello]$ git status
+HEAD detached from ac9a0ad
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    .directory
+        modified:   main.cpp
+
+[sergeev.rv@localhost hello]$ git commit -m "удаление"
+[detached HEAD c56cea9] удаление
+ 2 files changed, 1 insertion(+), 6 deletions(-)
+ delete mode 100644 .directory
+[sergeev.rv@localhost hello]$ git log
+[sergeev.rv@localhost hello]$ git checkout v1
+Warning: you are leaving 5 commits behind, not connected to
+any of your branches:
+
+  c56cea9 удаление
+  9f4da33 добавлен вопрос за какую партию Вы голосуете
+  6ae7cc9 игнорю папку с названием чёто и файл с названием KEK.txt
+  a7accc6 Обновлено реадми
+  310014a Изменен main
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> c56cea9
+
+HEAD is now at 11a9d82 Добавлено REadme.txt
+[sergeev.rv@localhost hello]$ git checkout HEAD
+[sergeev.rv@localhost hello]$ git branch <v2> c56cea9
+bash: v2: Нет такого файла или каталога
+[sergeev.rv@localhost hello]$ git branch v2 c56cea9
+[sergeev.rv@localhost hello]$ git branch <v2> c56cea9
+[sergeev.rv@localhost hello]$ git log --pretty=oneline
+
+[sergeev.rv@localhost hello]$ git hist -all
+git: 'hist' is not a git command. See 'git --help'.
+
+The most similar command is
+        bisect
+[sergeev.rv@localhost hello]$ git checkout master
+Previous HEAD position was 11a9d82 Добавлено REadme.txt
+Switched to branch 'master'
+[sergeev.rv@localhost hello]$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        c56cea9
+
+nothing added to commit but untracked files present (use "git add" to track)
+[sergeev.rv@localhost hello]$
+
+
