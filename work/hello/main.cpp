@@ -124,10 +124,7 @@ void solve() {
   if(!(ok-1)){
   change();
   return;
-}
-
-
-
+  }
   cout << "Fill out a survey or display a story? If you complete the survey, then enter 1, otherwise enter 2" << endl;
   int xx; cin >> xx;
   if (xx - 1) {
