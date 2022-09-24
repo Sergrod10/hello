@@ -66,7 +66,7 @@ pair<st, st> convert(st s, int x) {
     return {ans, words[words.size() - 1]};
 }
 
-void print(int x) { // x - ширина ячейки
+void print(int x) { // x - ГѓВёГѓВЁГѓВ°ГѓВЁГѓВ­ГѓВ  ГѓВїГѓВ·ГѓВҐГѓВ©ГѓВЄГѓВЁ
     st s;
     ifstream in("output.txt");
     ifstream inn("input.txt");
@@ -101,6 +101,15 @@ void print(int x) { // x - ширина ячейки
 }
 
 void solve() {
+  cout<<"If you need change questions write 1, otherwise write 2"<< endl;
+  int ok; cin>>ok;
+  if(!(ok-1)){
+  change();
+  return;
+}
+
+
+
   cout << "Fill out a survey or display a story? If you complete the survey, then enter 1, otherwise enter 2" << endl;
   int xx; cin >> xx;
   if (xx - 1) {
