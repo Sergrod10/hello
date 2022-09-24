@@ -66,7 +66,25 @@ pair<st, st> convert(st s, int x) {
     return {ans, words[words.size() - 1]};
 }
 
-void print(int x) { // x - øèğèíà ÿ÷åéêè
+void change(){
+std::ofstream toclear;
+std::ofstream ofs;
+toclear.open("out.txt",std::ofstream::out);
+ofs.open("input.txt",std::ofstream::out);
+cout<<"how much questions do you need?"<<endl;
+int x; cin>>x;
+st s;
+getline(cin,s);
+for (int i=0; i<x;i++){
+	cout<<"Enter ur"<<(i+1)<<" question: "<<endl;
+	getline(cin,s);
+	ofs<<s<<endl;
+}
+ofs.close()
+}
+
+
+void print(int x) { // x - ÃƒÂ¸ÃƒÂ¨ÃƒÂ°ÃƒÂ¨ÃƒÂ­ÃƒÂ  ÃƒÂ¿ÃƒÂ·ÃƒÂ¥ÃƒÂ©ÃƒÂªÃƒÂ¨
     st s;
     ifstream in("output.txt");
     ifstream inn("input.txt");
@@ -101,6 +119,15 @@ void print(int x) { // x - øèğèíà ÿ÷åéêè
 }
 
 void solve() {
+  cout<<"If you need change questions write 1, otherwise write 2"<< endl;
+  int ok; cin>>ok;
+  if(!(ok-1)){
+  change();
+  return;
+}
+
+
+
   cout << "Fill out a survey or display a story? If you complete the survey, then enter 1, otherwise enter 2" << endl;
   int xx; cin >> xx;
   if (xx - 1) {
